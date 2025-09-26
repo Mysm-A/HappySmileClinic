@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/HappySmileClinic/static/css/main.9d91d6ce.css",
-    "main.js": "/HappySmileClinic/static/js/main.288a2aba.js",
+    "main.js": "/HappySmileClinic/static/js/main.f4607560.js",
     "static/media/dental.png": "/HappySmileClinic/static/media/dental.eef2e4e328f62841cfcb.png",
     "static/media/2.jpeg": "/HappySmileClinic/static/media/2.ae54214f4f6a209da88f.jpeg",
     "index.html": "/HappySmileClinic/index.html",
     "main.9d91d6ce.css.map": "/HappySmileClinic/static/css/main.9d91d6ce.css.map",
-    "main.288a2aba.js.map": "/HappySmileClinic/static/js/main.288a2aba.js.map"
+    "main.f4607560.js.map": "/HappySmileClinic/static/js/main.f4607560.js.map"
   },
   "entrypoints": [
     "static/css/main.9d91d6ce.css",
-    "static/js/main.288a2aba.js"
+    "static/js/main.f4607560.js"
   ]
 }
