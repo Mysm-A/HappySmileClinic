@@ -21,8 +21,9 @@ function Navbar() {
           ☰</button>
 
         <ul className={`nav-links ${open ? "open" : ""}`}>
-          <li><a href="#home">HOME</a></li>
-          <li><a href='#about'>ABOUT US</a></li>
+           <li><a href="/"onClick={(e) => {e.preventDefault();
+            window.scrollTo({ top: 0, behavior: "smooth" } ) ; }} > HOME </a> </li>
+            <li><a href='#about'>ABOUT US</a></li>
         </ul>
       </div>  
 
