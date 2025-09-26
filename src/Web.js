@@ -99,7 +99,7 @@ function Web() {
       <div   className="footerSection">
         <h4> Quick Links</h4>
         <ul>
-           <li><a href="#"onClick={(e) => {e.preventDefault();
+           <li><a href="/"onClick={(e) => {e.preventDefault();
             window.scrollTo({ top: 0, behavior: "smooth" } ) ; }} > Home </a> </li>
           <li><a href="#about"> About Us</a></li>
           <li><a href="#hours"> Working hours</a></li>
