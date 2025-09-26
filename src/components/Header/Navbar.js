@@ -21,7 +21,7 @@ function Navbar() {
           ☰</button>
 
         <ul className={`nav-links ${open ? "open" : ""}`}>
-          <li><a href="/">HOME</a></li>
+          <li><a href="#home">HOME</a></li>
           <li><a href='#about'>ABOUT US</a></li>
         </ul>
       </div>  
