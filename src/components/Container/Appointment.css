@@ -1,0 +1,228 @@
+.getSmile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center ;
+  background: linear-gradient(to left, #6592c4, rgba(77, 139, 194, 0.34));
+  padding: 0;
+  border-radius: 10px ;
+  margin: 60px 0px 15px 0px ;
+  flex-direction: row ;
+  overflow: hidden ;
+  max-height: 75vh ;
+}
+
+.appointmentSection {
+  display: flex;
+  width: 100%;
+  max-width: 100% ;
+  box-sizing: border-box ;
+  margin: 20px auto ;
+  border-radius: 12px ;
+  box-shadow:  0px 8px 25px rgba(0, 0, 0, 0.2) ;
+  background: #ffffff ;
+  min-height: 500px;
+  overflow: hidden;
+}
+
+.blue {
+  background: linear-gradient(145deg, #6592c4, rgba( 77, 139, 194, 0.763) )  ;
+  color: black;
+  padding: 50px 30px;
+  display: flex;
+  flex: 1 ;
+  justify-content: center ;
+  align-items: center ;
+  width: 100%;
+  max-width: 100%;
+ text-align: center ;
+
+}
+
+.blue .h2 {
+  font-weight: bold;
+  font-size: 30px;
+  text-shadow:0 0 5px rgba(255, 255, 255, 0.593) ;
+  background:transparent;
+  backdrop-filter: blur(5px) ;
+ box-shadow: -2px -2px 15px #ffffff4f; 
+  border: 1px solid #b4b5b653;
+  border-radius: 8px;
+  padding: 10px;
+  display: flex ;
+  
+
+}
+
+.purpule {
+  background: #e3ece6ac;
+  padding: 50px 40px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+   width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.purpule h2 {
+  margin-bottom: 25px;
+  color: #000000;
+  text-align: center;
+  font-size: 24px;
+}
+
+.purpule label {
+  font-weight: bold;
+  margin-top: 20px;
+  color: #222222;
+  display: block;
+  font-size: 18px;
+}
+.purpule select {
+    width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 12px;
+  margin-top: 8px;
+  border-radius: 8px;
+  border: 1px solid #6592c4;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.purpule select:focus {
+  border-color:#6592c4;
+  box-shadow: 0 0 8px  rgba(77, 139, 194, 0.796);
+}
+
+.purpule button {
+  margin-top: 30px;
+  padding: 14px;
+  font-weight: bold;
+  background: linear-gradient(145deg, #6592c4, rgba(77, 139, 194, 0.763));
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.purpule button:hover {
+  background: linear-gradient(145deg, #3f6c9f, rgba(52, 108, 157, 0.763));
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.444);
+  
+}
+
+.appointmentContent {
+  flex: 1;
+  padding: 20px;
+  color: rgb(122, 36, 203);
+}
+
+.appointmentContent h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  -webkit-text-stroke: 1px #4b698a95; }
+
+.title {
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+}
+
+.heroBtn {
+  padding: 12px 25px;
+  font-size: 30px;
+  font-weight: 700;
+  background: linear-gradient(145deg, #3f6c9f, rgb(80, 156, 222));
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.371);
+  color: azure;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  border: 1px solid #51515167;
+  animation: textDrift 5s ease-in-out infinite alternate;
+}
+
+@keyframes textDrift {
+  50% { transform: translateY(-10px); }
+}
+
+.heroBtn:hover {
+  background: transparent;
+  backdrop-filter: blur (20px) ;
+  color:  rgba(52, 108, 157, 0.763);
+  }
+.heroImage {
+  flex: 1;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right;
+  height: 100vh;}
+
+
+.success {
+   position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #28a745;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  animation: slideInOut 3s forwards;
+  z-index: 2;
+}
+
+
+
+@media (max-width: 1024px), (max-width: 1440px),(max-width: 1920px) {
+  .appointmentContent h1 {font-size:  38px;}
+  .title {font-size:  25px;}
+  .heroBtn {font-size:20px;
+   padding:12px 22px;}
+  .heroImage { height: 350px; }}
+  .getSmile {height: 75vh;}
+
+
+
+@media (max-width: 768px) {
+
+  .appointmentSection { flex-direction: column;}
+   .appointmentSection .blue, .purpule{width:100%; padding: 10px; }
+  .blue .h2,  .purpule h2{ font-size: 20px; }
+  .appointmentContent .h1 {font-size: 20px ;}
+  .appointmentContent .title{ font-size: 14px; }
+  .appointmentContent .heroBtn {font-size: 16px;}
+  .appointmentContent {padding:5px;}
+  .getSmile{max-height: 45vh;}
+  .heroImage { height: 500px;  padding: 0px;}}
+  
+
+  @media (max-width: 425px) {
+  .appointmentSection {min-height: auto; margin:0px; }
+  .blue  h2, .purpule h2 { font-size: 16px;}
+  .purpule select,  .purpule button { font-size: 14px; padding: 10px; }
+  .appointmentContent .h1 { font-size: 16px;}
+  .appointmentContent { padding: 5px; }
+   .appointmentContent  .title { font-size: 12px; }
+  .appointmentContent .heroBtn { font-size: 12px; padding: 8px 12px;;}
+   .heroImage { height: 250px; }
+  .getSmile {flex-direction: column; height: 30vh;}
+}
+
+
+
+@media (max-width: 320px) {
+  .appointmentContent .h1 { font-size: 14px; margin: 10px;}
+  .appointmentContent  .title {font-size:10px;}
+ .blue  .h2 {margin: 2px;}
+  .appointmentContent .heroBtn { font-size: 12px; padding: 5px 10px; }
+  .heroImage { height: 200px;}
+  .getSmile { flex-direction: column; text-align: center; height:25vh;  }
+  .purpule { margin-top: 20px;}}

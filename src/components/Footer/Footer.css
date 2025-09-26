@@ -1,0 +1,77 @@
+
+.footer {
+    font-family: sans-serif;
+   background-color:  rgba(77, 139, 194, 0.52);
+    height: auto;
+    width: 100%;
+    margin: 0;
+    border-radius: 10px;}
+
+
+.titleFooter h2 {
+    text-align: center; 
+    padding: 20px;
+    color: rgb(56, 56, 56); }
+
+.footerSection h4{
+    font-size: 22px;
+    margin: 0px;
+    color: rgb(56, 56, 56);
+    perspective: 500px;
+    padding: 0 0 0 2px;
+}
+
+.heroFooter {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) ;
+  gap: 0px ;
+  align-items: stretch ;
+}
+
+.footerSection {
+  border-radius: 8px ;
+  padding: 15px ;
+  height: 250px;
+  display: flex ;
+  flex-direction: column;
+  }
+
+  
+.footerSection ul {
+  padding-left: 5px;
+  list-style-type: disc;
+  margin: 0;
+}
+.footerSection ul:hover{
+   text-shadow:0 0 5px rgba(255, 255, 255, 0.664) ;
+
+}
+
+.footerSection p,
+.footerSection li,
+.footerSection a {
+  margin: 5px 0 0 5px;
+  padding: 0 ;
+  font-size: 18px;
+  line-height: 1.6;
+  font-weight: bold;
+  color: #000000;
+  text-decoration: none;
+  transition: color 0.3s ease , transform  0.3s ease ;
+  cursor: pointer ;
+}
+
+.footerSection  li:hover {
+  color:  rgba(52, 108, 157, 0.763) ;
+  font-size: 21px;
+  transform: translateX(10px);
+  transition: transform 0.3s ease , color 0.3s ease , size 0.4s ease; 
+
+}
+
+
+.footerSection p:hover , .footerSection li a:hover {
+  color: rgba(52, 108, 157, 0.763);
+  transform: translateX(10px);
+    transition: transform 0.3s ease, color 0.3s ease;
+}

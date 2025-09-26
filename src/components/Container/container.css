@@ -1,0 +1,154 @@
+.aboutSection {
+    font-size: 25px;
+  margin: 13px 0px;
+  border-radius: 10px;
+  text-align: center;
+  flex-direction: column;
+    background-repeat: no-repeat;
+    background-size: cover;
+ transition: transform 0.2s ease, box-shadow 0.3s ease;
+ height:60vh;
+ display: flex;
+ justify-content: flex-start;
+  
+  align-items: center; 
+ 
+    
+}
+.aboutSection .paragraph {
+ background:transparent;
+  backdrop-filter: blur(5px) ;
+  box-shadow: 0 0 2px #5a5d6085;
+  border: 1px solid #97989953;
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 12px;
+  font-size: 50px;
+  margin: 20px 30px ;
+}
+
+.aboutSection .abou {
+  margin: 50px;
+  font-size: 40px;
+  text-align: center;
+}
+
+.aboutSection:hover ,  .hoursSection:hover {
+ transform: translateY(-5px); 
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.231); }
+
+.scroll-animate {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 0.5s ease-in-out;
+}
+
+.scroll-animate.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+.hoursSection{
+  font-size: 24px;
+  padding: 12px ;
+  margin: 13px 0px;
+  border-radius: 10px;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  height:70vh;
+  background: linear-gradient(to left, #6592c4, rgba(77, 139, 194, 0.34)); 
+  overflow: hidden;
+}
+.hoursSection span {
+   font-size: 40px;
+}
+
+.hoursSection .h2s {
+  text-align: center;
+  font-size: 40px;
+  margin: -2px;}
+ 
+
+  
+.hoursSection span:hover {
+  text-shadow:0 0 10px rgba(255, 255, 255, 0.77) ;
+  transform: translateX(10px);
+    transition: transform 0.4s ease; 
+
+
+}
+
+.hoursSection .time {
+  list-style: none; 
+  margin: 0;
+  padding: 0px 0px ;
+  color: blueviolet;
+  -webkit-text-stroke:1px #4b698a95;
+
+}
+
+.hoursSection .time li {
+  display: flex;
+  font-size: 20px ;
+  justify-content: space-between ;
+  padding: 8px ;
+  border-bottom: 1px dashed rgba(255,255,255,0.5); }
+
+
+ @media (max-width: 1920px){
+   .aboutSection{ height:40vh; padding: 20px ;}
+   .hoursSection { height: 50vh;}
+      .hoursSection .h2s {font-size: 40px; margin: 15px;}
+      .hoursSection span {font-size:  30px; word-spacing: 15px;}
+      .aboutSection .paragraph { padding:0px; font-size: 40px; margin: 10px 10px ;}
+      .aboutSection .abou { padding: 5px 5px; margin: 20px 10px; font-size: 40px;}
+ }
+
+ @media (max-width: 1440px) {
+   .aboutSection{ height:55vh; padding: 20px ;}
+   .hoursSection { height: 75vh;} 
+      .hoursSection .h2s {font-size: 35px; margin: 15px;}
+      .hoursSection span {font-size:  25px; margin:  0 10px 0 10px ;; }
+      .aboutSection .paragraph { padding: 18px; font-size: 35px; margin: 10px 10px ;}
+      .aboutSection .abou { padding: 5px 5px; margin: 20px 10px; font-size: 40px;}
+
+ }
+ 
+  @media (max-width: 1024px) {
+   .aboutSection{ max-height:35vh;}
+   .hoursSection { height: auto; } 
+   .hoursSection h2 {font-size: 35px;}
+   .hoursSection span {font-size:  20px; }
+   .aboutSection .paragraph { padding:10px; font-size: 30px; margin: 10px 10px ;}
+   .aboutSection .abou { padding: 5px 5px; margin: 10px 10px; font-size: 40px;} }
+
+@media (max-width: 768px) {
+ .hoursSection { max-height: 60vh;} 
+ .aboutSection {max-height: 50vh;}
+ .hoursSection .h2s {font-size: 20px; margin: 5px;}
+ .hoursSection span {font-size: 20px; }
+ .aboutSection .paragraph { font-size: 30px; margin: 10px 5px ; padding: 8px; }
+ .aboutSection .abou { padding: 5px 5px; margin: 20px 10px; font-size: 30px;}
+
+
+}
+
+
+@media(max-width: 425px){
+  .hoursSection .time li {padding: 3px;}
+  .aboutSection .paragraph { font-size: 20px; margin: 5px 10px ;}
+  .hoursSection .h2s {font-size:20px ; margin: 2px;  } 
+  .hoursSection span{ font-size: 18px;}
+.aboutSection {height: 30vh;}
+.hoursSection { max-height: 40vh;} 
+
+}
+
+@media (max-width: 320px){
+  .hoursSection .time li {padding: 3px;}
+  .hoursSection .h2s {font-size: 12px ; margin: 3px;}
+ .hoursSection { height: 30vh; padding: 8px ;}
+.hoursSection span {font-size: 12px; }
+.hoursSection .time { padding: 0px 8px ;}
+.aboutSection {height: 30vh; padding: 5px;}
+  .aboutSection .abou { padding: 0px 0px; margin: 5px 5px; font-size: 20px;}
+  .aboutSection .paragraph {  font-size:15px; margin: 0px 5px; padding: 10px ; }
+}

@@ -1,0 +1,122 @@
+
+.inputbox{
+    font-size: 30px;
+    margin: 12px;
+}
+.backLogin {
+    width: 100%;
+    background-color:  rgba(77, 139, 194, 0.52);
+    border-radius: 10px; }
+
+.wrapper {
+   align-items: center;
+   justify-content: center;
+   max-height: 100vh; 
+   align-items: center; 
+   align-content: center; }
+
+
+.wrapper .inputbox {
+    position: relative;
+    width: 100% ;
+    height: 100% ;
+    margin: 15px 0px ;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+.wrapper h2{
+    font-size: 30px;
+    text-align: center;
+}
+
+.inputbox input{
+    background: transparent;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    width: 80%;
+    height: 100%;
+    border: 1px solid blueviolet;
+    padding: 10px 15px 10px 10px;
+    border-radius: 10px;        
+    
+}
+.inputbox input:hover{
+ box-shadow:0 0 10px rgba(255, 255, 255, 0.637) ;
+}
+.inputbox  .icon{
+    position: absolute;
+    right: 0px;
+    transform: translate(-190%);
+    top: 25%;
+    color:aliceblue;
+}
+.inputbox input::placeholder{
+    color: aliceblue;
+}
+
+.wrapper button {
+    width: 100%;
+    height: 40px;
+    cursor: pointer;
+    background: blueviolet;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 10px;
+    color:rgb(255, 255, 255);
+    
+}
+.wrapper button:hover{
+    color: black;
+    background:  rgba(77, 139, 194, 0.52);
+    transform: scale(1); 
+    box-shadow:0 0 10px rgba(255, 255, 255, 0.77) ;}
+
+
+.wrapper .register{
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+
+.register p a{
+    text-decoration: none;
+    color:blueviolet ;
+    font-weight: 600;
+}
+
+.register p a:hover {
+  text-decoration: underline ;}
+
+.success {
+   position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #28a745;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  z-index: 2;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  color: white;
+  animation: slideInOut 3s forwards;
+}
+
+
+@keyframes slideInOut {
+  0% { opacity: 0; transform: translateX(100%); }
+  10% { opacity: 1; transform: translateX(0); }
+  90% { opacity: 1; transform: translateX(0); }
+  100% { opacity: 0; transform: translateX(100%); }
+} 
+
+
+@media (max-width: 320px) {
+    .inputbox .icon{right: 0px;}
+    .register p a{ font-size: 18px;}
+    .wrapper h2 { font-size: 15px;}
+}
