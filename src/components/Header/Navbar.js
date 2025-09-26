@@ -5,18 +5,18 @@ import "./Navbar.css";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
-  const navigate = useNavigate() ;
+  const navigate = useNavigate();
 
-    const scrollToLogin = () => {
-   const  section = document.getElementById("loginSection") ;
+   const scrollToLogin = () => {
+   const section = document.getElementById("loginSection");
   if (section) section.scrollIntoView({ behavior: "smooth" });
 };
 
 
   return (
     
-    <nav  className="navbar">
-      <div className="nav-left" >
+    <nav className="navbar">
+      <div className="nav-left">
         <button className="menu-btn" onClick={() => setOpen(!open)}>
           ☰</button>
 
@@ -27,7 +27,7 @@ function Navbar() {
       </div>  
 
        <div className="logo" >
-       <a href="#"onClick={(e) => {e.preventDefault() ;
+       <a href="#" onClick={(e) => {e.preventDefault() ;
          window.scrollTo({ top: 0, behavior: "smooth" }) ;
          }}>HAPPY SMILE </a> </div>
         

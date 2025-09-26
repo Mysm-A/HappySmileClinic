@@ -1,14 +1,14 @@
 import React ,{useEffect} from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Login from  './components/Login/Login';
-import SignUp from './components/SignUp/SignUp';
+import Login from  './components/login/Login';
+import SignUp from './components/signup/Signup';
  import Navbar from  './components/Header/Navbar';
   import Image from  './Images/2.jpeg';
  import dental from './Images/dental.png';
 import './components/Container/container';
 import Appointment from './components/Container/Appointment';
 import Container from './components/Container/container';
-import Footer from './components/Footer/Footer';
+import Footer from './components/Footer/footer';
 import Protected from './components/Container/Protected'; 
 
 
@@ -65,14 +65,13 @@ function Web() {
               <li>
                 <span>Wednesday:</span><span> 09:00 - 22:00 </span> </li>
               <li>
-                <span> Thursday:</span><span> 09:00 - 22:00 </span>
-                </li>
+                <span> Thursday:</span><span> 09:00 - 22:00 </span></li>
               <li>
-                <span>Friday: </span><span>09:00 - 22:00 </span></li>
+                <span>Friday: </span><span>09:00 - 22:00</span></li>
               <li>
-                <span> Saturday:</span><span> 09:00 - 22:00</span></li>
+                <span>Saturday:</span><span> 09:00 - 22:00</span></li>
               <li>
-                <span> Sunday: </span><span>--Closed--</span></li>
+                <span>Sunday: </span><span>--Closed--</span></li>
              </ul>
         </div> 
         
@@ -80,9 +79,9 @@ function Web() {
       <Routes>
 
         <Route path="/" element={<Login />} />
-        <Route path="/SignUp" element={<SignUp />} />
-        <Route path="/Login"  element={<Login />} />
-        < Route path="/appointment"  element={ <Protected><Appointment /></Protected>}/>
+        <Route path="/Signup" element={<SignUp />} />
+        <Route path="/Login" element={<Login />} />
+        < Route path="/appointment" element={ <Protected><Appointment /></Protected>}/>
           <Route path="/Appointment" element={<Appointment />} />
       </Routes>
       <div  className="footer">

@@ -43,7 +43,7 @@ function Appointment() {
         
         <label>
           DOCTOR: <select value={selectedDoctor} onChange={(e) => setSelectedDoctor (e.target.value)}>
-            <option value={ ''}> Choose </option>
+            <option value={ ''}> Select </option>
             {appointments.map ((app,index ) => (
               <option key={ index } value={app.doctor}> {app.doctor} </option>
             ))} </select></label>
@@ -51,7 +51,7 @@ function Appointment() {
 
           <label>
            DAY: <select  value={selectedDay} onChange= {(e) => setSelectedDay (e.target.value)}>
-            <option value={ ''}> Choose </option>
+            <option value={ ''}> Select </option>
             {appointments.map ((app,index ) => (
               <option  key={ index } value={app.day}> {app.day}</option>
             ))}
@@ -60,7 +60,7 @@ function Appointment() {
 
               
               <label>TIME: <select value={selectedTime} onChange={(e) => setSelectedTime (e.target.value)} >
-               <option value={ ''} >Choose </option>
+               <option value={ ''} >Select </option>
 
                  {selectedDoctor && appointments.find(a => a.doctor === selectedDoctor).times.map((time, idx) => (
                  <option key={ idx } value={time}> {time}

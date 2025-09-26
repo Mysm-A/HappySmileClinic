@@ -1,6 +1,6 @@
 import './container.css';
-const Container = () => {
+const container = () => {
     return (
         <div>Container</div>
     )}
-export default Container;
+export default container;

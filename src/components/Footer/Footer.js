@@ -1,4 +1,4 @@
-import './Footer.css' ;
+import './footer.css' ;
 
     const Footer = () => {
     const scrollToLogin = () => {
@@ -10,4 +10,4 @@ import './Footer.css' ;
     return (
         <div> Footer </div>
     )}
-export default Footer ;
+export default Footer;

@@ -31,12 +31,12 @@ const handleSubmit = (e) => {
         <h2>SIGN IN</h2>
       <form onSubmit={handleSubmit}>
         <div className="inputbox">
-          <input type="text" placeholder="UserName" required />
+          <input type="text" placeholder="UserName"  onChange={(e) => setName(e.target.value)}required />
           <LuUser className="icon" />
         </div>
 
         <div className="inputbox">
-          <input type="password" placeholder="Password"   onChange={(e) => setPassword(e.target.value)}required />
+          <input type="password" placeholder="Password"   value={password} onChange={(e) => setPassword(e.target.value)}required />
           <MdLockOutline className="icon" />
       </div>
 
@@ -45,11 +45,13 @@ const handleSubmit = (e) => {
 
 
        <div className="register">
-  <p>Don’t have an account? <Link to="/signup">Register</Link> </p>
+  <p>
+    Don’t have an account? <Link to="/signup">Register</Link>
+  </p>
 </div>
 
-      </form> 
-    </div> </div>
+      </form>
+    </div></div>
   );
 }
 

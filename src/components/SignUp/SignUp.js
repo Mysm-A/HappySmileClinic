@@ -4,9 +4,9 @@ import { MdLockOutline } from "react-icons/md";
 import { IoMailOutline } from "react-icons/io5";
 import {Link,  useNavigate } from "react-router-dom";
 
-import "./SignUp.css";
+import "./Signup.css";
 
-function SignUp() {
+function Signup() {
   const  navigate = useNavigate();
   const [success, setSuccess] = useState(false);
 
@@ -51,4 +51,4 @@ function SignUp() {
 
 }
 
-export default SignUp ;
+export default Signup;

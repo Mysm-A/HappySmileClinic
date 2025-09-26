@@ -4,7 +4,7 @@
   align-items: center;
   background-color:  rgba(77, 139, 194, 0.702);
   box-sizing: border-box;
- background:transparent;
+ /* background:transparent; */
   backdrop-filter: blur(2px) ;
   color: white;
   top: 2px;
@@ -55,7 +55,7 @@
   margin: 10px ;
   border-radius: 10px;
   text-decoration: none;
-  color: azure;
+    color: azure;
   font-weight: bold;
   transition: 0.3s;  
   background: linear-gradient(145deg, #3f6c9f, rgb(80, 156, 222));
@@ -63,12 +63,14 @@
   border-radius: 8px;
   cursor: pointer;
   transition: 0.3s;
-    border: 1px solid #51515167 ; }
+    border: 1px solid #51515167;
+}
 
 .login-btn:hover {
   background: #ffffffd4;
   color:  rgba(52, 108, 157, 0.861);
-    box-shadow:0 0 10px rgba(255, 255, 255, 0.77); }
+    box-shadow:0 0 10px rgba(255, 255, 255, 0.77);
+}
 
 
 .menu-btn {
