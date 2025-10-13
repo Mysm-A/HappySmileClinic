@@ -1,15 +1,22 @@
 {
   "files": {
-    "main.css": "/HappySmileClinic/static/css/main.fe5f28a5.css",
-    "main.js": "/HappySmileClinic/static/js/main.49dd154c.js",
+    "main.css": "/HappySmileClinic/static/css/main.717029f5.css",
+    "main.js": "/HappySmileClinic/static/js/main.4de5e096.js",
+    "static/media/6.png": "/HappySmileClinic/static/media/6.2a24b3742298d2b2d75a.png",
+    "static/media/12.jpeg": "/HappySmileClinic/static/media/12.1c26318cc7d291425d1d.jpeg",
+    "static/media/13.jpeg": "/HappySmileClinic/static/media/13.632bf824226112ffed6f.jpeg",
+    "static/media/10.jpeg": "/HappySmileClinic/static/media/10.d5103fdd9008e78bd814.jpeg",
+    "static/media/11.jpeg": "/HappySmileClinic/static/media/11.78ba0c960eebe409f21b.jpeg",
+    "static/media/7.jpeg": "/HappySmileClinic/static/media/7.f5400ce0c31f4b2ec7a8.jpeg",
     "static/media/dental.png": "/HappySmileClinic/static/media/dental.eef2e4e328f62841cfcb.png",
+    "static/media/8.jpeg": "/HappySmileClinic/static/media/8.100630dfcf0d8140f8a4.jpeg",
     "static/media/2.jpeg": "/HappySmileClinic/static/media/2.ae54214f4f6a209da88f.jpeg",
     "index.html": "/HappySmileClinic/index.html",
-    "main.fe5f28a5.css.map": "/HappySmileClinic/static/css/main.fe5f28a5.css.map",
-    "main.49dd154c.js.map": "/HappySmileClinic/static/js/main.49dd154c.js.map"
+    "main.717029f5.css.map": "/HappySmileClinic/static/css/main.717029f5.css.map",
+    "main.4de5e096.js.map": "/HappySmileClinic/static/js/main.4de5e096.js.map"
   },
   "entrypoints": [
-    "static/css/main.fe5f28a5.css",
-    "static/js/main.49dd154c.js"
+    "static/css/main.717029f5.css",
+    "static/js/main.4de5e096.js"
   ]
 }
