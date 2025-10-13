@@ -180,6 +180,7 @@ align-items: center;
 
 .doctorDescription{
   color: rgba(54, 54, 54, 0.873);
+  margin: 16px 2px;
 }
 
 
@@ -236,7 +237,7 @@ align-items: center;
 .hoursSection { max-height: 40vh;} 
 .image{ height: auto}
 .drContainer{grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));gap: 10px;}
-  .ourDoctors{padding: 10px; font-size: 18px;}
+  .ourDoctors{padding: 10px; font-size: 16px;}
   .drCard{ padding: 5px;}
 
 
