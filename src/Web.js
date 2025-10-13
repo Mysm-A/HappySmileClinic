@@ -1,5 +1,6 @@
 import React ,{useEffect} from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import "./Web.css";
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from  './components/login/Login';
 import SignUp from './components/signup/Signup';
  import Navbar from  './components/Header/Navbar';
@@ -10,6 +11,15 @@ import Appointment from './components/Container/Appointment';
 import Container from './components/Container/container';
 import Footer from './components/Footer/footer';
 import Protected from './components/Container/Protected'; 
+import clinicImg from  "./Images/6.png";
+import  "./Images/7.jpeg";
+import  "./Images/8.jpeg";
+import  "./Images/10.jpeg";
+import  "./Images/11.jpeg";
+import  "./Images/12.jpeg";
+import "./Images/13.jpeg";
+import { FaGithub } from "react-icons/fa";
+import { MdDescription } from 'react-icons/md';
 
 
 function Web() {
@@ -27,6 +37,34 @@ function Web() {
 
     sections.forEach((sec) => observer.observe(sec));
   }, []);
+
+  const handleScroll = () => {
+      const image = document.querySelector(".zoomImg");
+      if (!image) return;
+
+      const rect = image.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+
+      if (rect.top < windowHeight && rect.bottom > 0) {
+        const scrollPercent = 1 - rect.top / windowHeight;
+        const scale = 1 + scrollPercent * 0.2;
+        image.style.transform = `scale(${scale})`;
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+
+    const doctorsData = [
+      { id:1 , image: require('./Images/7.jpeg') , name:"Dr. Omar", title:'Orthodontist'  }, 
+      { id:2 , image: require('./Images/8.jpeg') , name:"Dr. Noah", title:'Esthetic Dentist'  }, 
+      { id:3 , image: require('./Images/10.jpeg') , name:"Dr. Sara", title:'Orthodontist'  }, 
+      { id:4 , image: require('./Images/11.jpeg') , name:"Dr. Melissa ", title:'Prosthodontist'  }, 
+      { id:5 , image: require('./Images/12.jpeg') , name:"Dr. Sophia", title:'Dental Technician'  }, 
+      { id:6 , image: require('./Images/13.jpeg') , name:"Dr. Asya", title:'Dental Technician'  }, 
+
+    ];
+
   return (
     
     <Router>
@@ -74,18 +112,35 @@ function Web() {
                 <span>Sunday: </span><span>--Closed--</span></li>
              </ul>
         </div> 
-        
-   {/* <Appointment />  */}
+        <div className='image' >
+          <img className='zoomImg' src={clinicImg} alt='clinic'/>
+        </div>
+
+        <div className='ourDoctors  scroll-animate'>
+          <h2 className='drTitle'> Meet Our Doctors</h2>
+          <div className='drContainer'>{doctorsData.map((doctor)=> (
+            <div className='drCard scroll-animate'  key={doctor.id}>
+              <div className='drImage'><img src={ doctor.image} />
+          </div>
+
+          <h4 className='drNames'>{doctor.name}</h4>
+          {/* <h5 className='drTitle'>{doctor.drTitle}</h5> */}
+          <p className='doctorDescription'>{doctor.title}</p>
+        </div>
+          ))}
+          </div>
+          </div>
+
       <Routes>
 
         <Route path="/" element={<Login />} />
         <Route path="/Signup" element={<SignUp />} />
         <Route path="/Login" element={<Login />} />
-        < Route path="/appointment" element={ <Protected><Appointment /></Protected>}/>
-          <Route path="/Appointment" element={<Appointment />} />
+        < Route path="/Appointment" element={ <Protected><Appointment /></Protected>}/>
+          {/* <Route path="/Appointment" element={<Appointment />} /> */}
       </Routes>
-      <div  className="footer">
-      <div className="titleFooter"> 
+      <div  className="footer ">
+      <div className="titleFooter  scroll-animate"> 
         <h2 > HAPPY SMILE</h2>
 
         <div className="heroFooter">
@@ -94,19 +149,25 @@ function Web() {
           <p>Istanbul /TURKEY </p>
           <p>  +90 555 555 00 00</p>
           <p> info@hsmile.com</p>
-      </div>
+          <a href='https://github.com/Mysm-A' target="_blank"> <FaGithub className='gitIcon' /></a>
+      </div> 
+
 
       <div   className="footerSection">
         <h4> Quick Links</h4>
         <ul>
            <li><a href="#"onClick={(e) => {e.preventDefault();
             window.scrollTo({ top: 0, behavior: "smooth" } ) ; }} > Home </a> </li>
-          <li><a href="#about"> About Us</a></li>
-          <li><a href="#hours"> Working hours</a></li>
+          <li><a href="#" onClick={(e) => {
+              e.preventDefault();
+              const section = document.getElementById('about'); 
+              if(section) section.scrollIntoView({ behavior:"smooth" }); }}> About Us</a></li>
+          <li><a href="#"  onClick={(e) => {
+              e.preventDefault();
+              const section = document.getElementById('hours'); 
+              if(section) section.scrollIntoView({ behavior:"smooth" }); }}> Working hours</a></li>
         </ul>
       </div>
-
-   
 </div>
       </div>
 

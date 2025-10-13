@@ -10,8 +10,7 @@
  height:60vh;
  display: flex;
  justify-content: flex-start;
-  
-  align-items: center; 
+align-items: center; 
  
     
 }
@@ -25,6 +24,18 @@
   padding: 12px;
   font-size: 50px;
   margin: 20px 30px ;
+    animation: slideUp 1s ease-out forwards;
+  animation-delay: 1.5s;
+  opacity: 0;
+}
+
+@keyframes slideUp {
+ 0% {opacity: 0;
+    transform: translateX(-90px);
+  }
+  100% {opacity: 1;
+  transform: translateX(0);
+}
 }
 
 .aboutSection .abou {
@@ -93,6 +104,85 @@
   border-bottom: 1px dashed rgba(255,255,255,0.5); }
 
 
+  .image{
+    position: relative ;
+    max-height: 60vh auto;
+    width: 100%;
+    overflow: hidden ;
+    border-radius: 10px ;
+    margin: 15px auto;
+
+
+  }
+  .zoomImg{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.1s ease-out;
+  }
+
+.ourDoctors{
+  padding: 20px 20px;
+  text-align: center;
+    font-size: 24px;
+  margin: 13px 0px;
+
+}
+.drTitle{
+  margin:  25px;
+  color: #000000;
+}
+
+
+.drContainer{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.drCard{
+  background: rgb(244, 251, 251);
+  padding: 20px;
+  border-radius: 10px;
+  transform: translateY(50px);
+  transition: all 0.8s ease-out;
+  opacity: 0;
+      box-shadow: 0 5px 5px rgba(0, 0, 0, 0.100);
+
+}
+
+.drCard.active{
+    transform: translateY(0);
+    opacity: 1;
+
+  
+}
+
+.drCard:hover{
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.231);
+    transform: translateY(-15px);
+    background: rgba(77, 139, 194, 0.402); 
+}
+
+.drImage img {
+  border-radius: 10px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+
+.drNames{
+  color:#000000;
+  margin-bottom: 5px;
+  margin: 8px;
+  
+}
+
+.doctorDescription{
+  color: rgba(54, 54, 54, 0.873);
+}
+
+
  @media (max-width: 1920px){
    .aboutSection{ height:40vh; padding: 20px ;}
    .hoursSection { height: 50vh;}
@@ -122,11 +212,15 @@
 
 @media (max-width: 768px) {
  .hoursSection { max-height: 60vh;} 
- .aboutSection {max-height: 50vh;}
+ .aboutSection {max-height: 55vh;}
  .hoursSection .h2s {font-size: 20px; margin: 5px;}
  .hoursSection span {font-size: 20px; }
- .aboutSection .paragraph { font-size: 30px; margin: 10px 5px ; padding: 8px; }
- .aboutSection .abou { padding: 5px 5px; margin: 20px 10px; font-size: 30px;}
+ .aboutSection .paragraph { font-size: 28px; margin: 10px 5px ; padding: 8px; }
+ .aboutSection .abou { padding: 5px 5px; margin: 10px 10px; font-size: 30px;}
+ .image{height:auto}
+ .drContainer{grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));gap: 10px;}
+  .ourDoctors{padding: 10px; font-size: 22px;}
+  .drCard{ padding: 5px;}
 
 
 }
@@ -134,11 +228,17 @@
 
 @media(max-width: 425px){
   .hoursSection .time li {padding: 3px;}
-  .aboutSection .paragraph { font-size: 20px; margin: 5px 10px ;}
+  .aboutSection .paragraph { font-size: 18px; margin: 5px 5px ;}
   .hoursSection .h2s {font-size:20px ; margin: 2px;  } 
   .hoursSection span{ font-size: 18px;}
-.aboutSection {height: 30vh;}
+.aboutSection {height: 30vh; padding: 2px;}
+.aboutSection .abou { padding: 0px 0px; margin: 5px 5px; font-size: 20px;}
 .hoursSection { max-height: 40vh;} 
+.image{ height: auto}
+.drContainer{grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));gap: 10px;}
+  .ourDoctors{padding: 10px; font-size: 18px;}
+  .drCard{ padding: 5px;}
+
 
 }
 
@@ -151,4 +251,9 @@
 .aboutSection {height: 30vh; padding: 5px;}
   .aboutSection .abou { padding: 0px 0px; margin: 5px 5px; font-size: 20px;}
   .aboutSection .paragraph {  font-size:15px; margin: 0px 5px; padding: 10px ; }
-}
+  .image { margin:5px auto;    object-fit: contain; height: auto;}
+  .drContainer{grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));gap: 10px;}
+  .ourDoctors{padding: 10px; font-size: 16px;}
+  .drCard{ padding: 5px;}
+
+ }

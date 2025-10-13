@@ -5,7 +5,7 @@
     height: auto;
     width: 100%;
     margin: 0;
-    border-radius: 10px;}
+    border-radius: 10px 10px 0 0;}
 
 
 .titleFooter h2 {
@@ -26,6 +26,26 @@
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) ;
   gap: 0px ;
   align-items: stretch ;
+  animation: slideUpp 1s ease-out forwards;
+  animation-delay: 1.5s;
+  opacity: 0;
+}
+
+@keyframes slideUpp {
+ 0% {opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {opacity: 1;
+  transform: translateY(0);
+}
+}
+.gitIcon{
+  margin: 15px 0 0 5px;
+    font-size: 30px;
+
+}
+.gitIcon:hover{
+  color: #161616;
 }
 
 .footerSection {
