@@ -238,12 +238,12 @@
   .appointmentSection {min-height: auto; margin:0px; }
   .blue  h2, .purpule h2 { font-size: 16px;}
   .purpule select,  .purpule button { font-size: 14px; padding: 10px; }
-  .appointmentContent .h1 { font-size: 16px;}
-  .appointmentContent { padding: 5px; }
-   .appointmentContent  .title { font-size: 12px; }
+  .appointmentContent .h1 { font-size: 16px;  padding: 0 30px 0 0; }
+  .appointmentContent { padding: 5px; z-index: 1; }
+   .appointmentContent  .title { font-size: 12px; padding: 0 30px 0 0; }
   .appointmentContent .heroBtn { font-size: 12px; padding: 8px 12px;;}
-   .heroImage { height: 250px; }
-  .getSmile {flex-direction: column; height: 30vh;}
+   .heroImage {height: 100%; position: absolute; opacity: 1; z-index: 0; width: 100%; }
+  .getSmile {flex-direction: row; height: 30vh; position: relative; justify-content: flex-start;}
 }
 
 
@@ -253,6 +253,6 @@
   .appointmentContent  .title {font-size:10px;}
  .blue  .h2 {margin: 2px;}
   .appointmentContent .heroBtn { font-size: 12px; padding: 5px 10px; }
-  .heroImage { height: 200px;}
+  .heroImage { height: 25vh;}
   .getSmile { flex-direction: column; text-align: center; height:25vh;  }
   .purpule { margin-top: 20px;}}
