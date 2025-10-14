@@ -48,16 +48,7 @@ align-items: center;
  transform: translateY(-5px); 
   box-shadow: 0 8px 10px rgba(0, 0, 0, 0.231); }
 
-.scroll-animate {
-  opacity: 0;
-  transform: translateX(-100px);
-  transition: all 0.5s ease-in-out;
-}
 
-.scroll-animate.active {
-  opacity: 1;
-  transform: translateX(0);
-}
 .hoursSection{
   font-size: 24px;
   padding: 12px ;
@@ -103,7 +94,16 @@ align-items: center;
   padding: 8px ;
   border-bottom: 1px dashed rgba(255,255,255,0.5); }
 
+.scroll-animate {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 0.5s ease-in-out;
+}
 
+.scroll-animate.active {
+  opacity: 1;
+  transform: translateX(0);
+}
   .image{
     position: relative ;
     max-height: 60vh auto;
