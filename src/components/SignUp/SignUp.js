@@ -2,25 +2,25 @@ import React, { useState } from "react";
 import { LuUser } from "react-icons/lu";
 import { MdLockOutline } from "react-icons/md";
 import { IoMailOutline } from "react-icons/io5";
-import {Link,  useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import "./Signup.css";
 
-function Signup() {
+function Signup({onSwitch, onLoginSuccess }) {
   const  navigate = useNavigate();
   const [success, setSuccess] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setSuccess(true) ;
+    if(onLoginSuccess) onLoginSuccess();
     setTimeout(() => {
-      navigate("/appointment");  } , 2000 );
+      navigate("/appointment");  } , 150 );
   };
 
   return (
-    <div  className="backLogin">
     <div className="wrapper" id="signinSection">
-      <h2> Create your account</h2>
+      <h2> Create Your Account</h2>
       <form onSubmit={handleSubmit}>
         <div className="inputbox">
           <input type="text" placeholder="First Name" required />
@@ -39,13 +39,12 @@ function Signup() {
           <IoMailOutline  className="icon"/>
         </div> 
 
-        <button type="submit">Create account</button>
-        <div className="register"> <p>Already have an account?{" "} <Link to="/">Sign In </Link> </p> </div>
-        {success && <p className="success">Account created successfully!</p>}
+        <button type="submit">Create Account</button>
+        <div className="register">
+         <p>Already have an account?{" "} <span onClick={onSwitch}>Sign In </span> </p> </div>
+        {success && <p className="success">Account Created Successfully!</p>}
       </form>
       
-    </div>
-
     </div>
   );
 

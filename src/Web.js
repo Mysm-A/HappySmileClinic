@@ -1,13 +1,10 @@
 import React ,{useEffect} from 'react';
 import "./Web.css";
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
-import Login from  './components/login/Login';
-import SignUp from './components/signup/Signup';
+import { Routes, Route ,useNavigate} from 'react-router-dom';
  import Navbar from  './components/Header/Navbar';
   import Image from  './Images/2.jpeg';
  import dental from './Images/dental.png';
 import './components/Container/container';
-import Appointment from './components/Container/Appointment';
 import Container from './components/Container/container';
 import Footer from './components/Footer/footer';
 import Protected from './components/Container/Protected'; 
@@ -16,13 +13,19 @@ import  "./Images/7.jpeg";
 import  "./Images/8.jpeg";
 import  "./Images/10.jpeg";
 import  "./Images/11.jpeg";
-import  "./Images/12.jpeg";
-import "./Images/13.jpeg";
+import  "./Images/12.jpeg" ;
+import "./Images/13.jpeg" ;
 import { FaGithub } from "react-icons/fa";
 import { MdDescription } from 'react-icons/md';
-
+import Appointment from './components/Container/Appointment' ;
+import { FaCircleArrowUp } from "react-icons/fa6";
+import Image16h from "./Images/16.png";
+import Image15 from "./Images/15.png";
+import Services from "./components/Container/Services";
 
 function Web() {
+  const navigate = useNavigate();
+
   useEffect(() => {
     const sections = document.querySelectorAll(".scroll-animate");
     const observer = new IntersectionObserver(
@@ -56,19 +59,21 @@ function Web() {
 
 
     const doctorsData = [
-      { id:1 , image: require('./Images/7.jpeg') , name:"Dr. Omar", title:'Orthodontist'  }, 
-      { id:2 , image: require('./Images/8.jpeg') , name:"Dr. Noah", title:'Esthetic Dentist'  }, 
-      { id:3 , image: require('./Images/10.jpeg') , name:"Dr. Sara", title:'Orthodontist'  }, 
-      { id:4 , image: require('./Images/11.jpeg') , name:"Dr. Melissa ", title:'Prosthodontist'  }, 
-      { id:5 , image: require('./Images/12.jpeg') , name:"Dr. Sophia", title:'Dental Technician'  }, 
-      { id:6 , image: require('./Images/13.jpeg') , name:"Dr. Asya", title:'Dental Technician'  }, 
+      { id:1 , image: require('./Images/7.jpeg') , name:"Dr.Omar Willy", title:'Orthodontist'  }, 
+      { id:2 , image: require('./Images/8.jpeg') , name:"Dr.Noah Roy", title:'Esthetic Dentist'  }, 
+      { id:3 , image: require('./Images/10.jpeg') , name:"Dr.Sara Nilly", title:'Orthodontist'  }, 
+      { id:4 , image: require('./Images/11.jpeg') , name:"Dr.Melissa Mikay ", title:'Prosthodontist'  }, 
+      { id:5 , image: require('./Images/12.jpeg') , name:"Dr.Sophia Khaled", title:'Dental Technician'  }, 
+      { id:6 , image: require('./Images/13.jpeg') , name:"Dr.Asya Ali", title:'Dental Technician'  }, 
 
     ];
 
   return (
-    
-    <Router>
+    <>
        <Navbar />
+       <a href='#' className='scrollUp' onClick={ (e) =>{e.preventDefault();
+        window.scrollTo({top:0, behavior:"smooth"}); }}>
+          <FaCircleArrowUp /></a>
        <div id="home"  className="getSmile" >
        <div  className="appointmentContent">
 
@@ -76,10 +81,8 @@ function Web() {
         <p className="title">
               For a bright and confident smile, we stand by your side with advanced and effective oral care treatments.
         </p>
-        <button  className="heroBtn" onClick={()=>{
-          const section =document.getElementById('loginSection') ;
-          if( section)section.scrollIntoView({ behavior:'smooth'});
-        }}>Get your smile </button>
+       <button className="heroBtn" onClick={() => navigate("/Appointment")}>
+ Make an Appointment</button>
 
  </div>
   
@@ -94,30 +97,13 @@ function Web() {
         </p>
        </div>
 
-           <div id='hours'  className='hoursSection scroll-animate' > 
-          <h2  className="h2s" > OUR WORKING HOURS </h2>
-             <ul className="time"><li>
-                <span>Monday:</span><span> 09:00 - 22:00</span> </li>
-              <li>
-              <span> Tuesday:</span><span> 09:00 - 22:00 </span></li>
-              <li>
-                <span>Wednesday:</span><span> 09:00 - 22:00 </span> </li>
-              <li>
-                <span> Thursday:</span><span> 09:00 - 22:00 </span></li>
-              <li>
-                <span>Friday: </span><span>09:00 - 22:00</span></li>
-              <li>
-                <span>Saturday:</span><span> 09:00 - 22:00</span></li>
-              <li>
-                <span>Sunday: </span><span>--Closed--</span></li>
-             </ul>
-        </div> 
         <div className='image' >
           <img className='zoomImg' src={clinicImg} alt='clinic'/>
         </div>
 
         <div className='ourDoctors  scroll-animate'>
           <h2 className='drTitle'> Meet Our Doctors</h2>
+          <p className='drPraragrapg'>Our clinic was created to make your smile beautiful, healthy and white range of dental treatment and dental restoration</p>
           <div className='drContainer'>{doctorsData.map((doctor)=> (
             <div className='drCard scroll-animate'  key={doctor.id}>
               <div className='drImage'><img src={ doctor.image} />
@@ -129,54 +115,45 @@ function Web() {
         </div>
           ))}
           </div>
+          <div className='toothSection'>
+          <div className='toothImage'>
+        <img src={Image15} alt='16' className='Image15' />
+        </div>
+        <div className='text'><p>Your Smile Is My Mission |Your Smile Is My Mission | Your Smile Is My Mission
+           | Your Smile Is My Mission | Your Smile Is My Mission | </p></div>
+        </div>
+
+        
           </div>
-
+            <div id='hours'  className='hoursSection scroll-animate' > 
+               <div className='hoursImageShdow'>
+                      <img src={Image16h} alt='hoursImage' className='Image16h' />
+              </div>
+          <h2  className="h2s" > OUR WORKING HOURS </h2>
+             <ul className="time"><li>
+                <span>Monday:</span><span> 09:00 - 18:00</span> </li>
+              <li>
+              <span> Tuesday:</span><span> 09:00 - 18:00 </span></li>
+              <li>
+                <span>Wednesday:</span><span> 09:00 - 18:00 </span> </li>
+              <li>
+                <span> Thursday:</span><span> 09:00 - 18:00 </span></li>
+              <li>
+                <span>Friday: </span><span>09:00 - 18:00</span></li>
+              <li>
+                <span>Saturday:</span><span> 09:00 - 18:00</span></li>
+              <li>
+                <span>Sunday: </span><span>--Closed--</span></li>
+                
+             </ul>
+        </div> 
       <Routes>
-
-        <Route path="/" element={<Login />} />
-        <Route path="/Signup" element={<SignUp />} />
-        <Route path="/Login" element={<Login />} />
-        < Route path="/Appointment" element={ <Protected><Appointment /></Protected>}/>
+        < Route path="Appointment" element={<Appointment />}/>
+      < Route path="Services" element={<Services />}/>
           {/* <Route path="/Appointment" element={<Appointment />} /> */}
       </Routes>
-      <div  className="footer ">
-      <div className="titleFooter  scroll-animate"> 
-        <h2 > HAPPY SMILE</h2>
-
-        <div className="heroFooter">
-       <div  className="footerSection">
-          <h4> Contact Us </h4>
-          <p>Istanbul /TURKEY </p>
-          <p>  +90 555 555 00 00</p>
-          <p> info@hsmile.com</p>
-          <a href='https://github.com/Mysm-A' target="_blank"> <FaGithub className='gitIcon' /></a>
-      </div> 
-
-
-      <div   className="footerSection">
-        <h4> Quick Links</h4>
-        <ul>
-           <li><a href="#"onClick={(e) => {e.preventDefault();
-            window.scrollTo({ top: 0, behavior: "smooth" } ) ; }} > Home </a> </li>
-          <li><a href="#" onClick={(e) => {
-              e.preventDefault();
-              const section = document.getElementById('about'); 
-              if(section) section.scrollIntoView({ behavior:"smooth" }); }}> About Us</a></li>
-          <li><a href="#"  onClick={(e) => {
-              e.preventDefault();
-              const section = document.getElementById('hours'); 
-              if(section) section.scrollIntoView({ behavior:"smooth" }); }}> Working hours</a></li>
-        </ul>
-      </div>
-</div>
-      </div>
-
-    
-    </div>
-
-    </Router>
-
-
+     <Footer />
+</>
     
   );}
 

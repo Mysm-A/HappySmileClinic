@@ -1,16 +1,16 @@
 .aboutSection {
-    font-size: 25px;
+  font-size: 25px;
   margin: 13px 0px;
   border-radius: 10px;
   text-align: center;
   flex-direction: column;
-    background-repeat: no-repeat;
-    background-size: cover;
- transition: transform 0.2s ease, box-shadow 0.3s ease;
- height:60vh;
- display: flex;
- justify-content: flex-start;
-align-items: center; 
+  background-repeat: no-repeat;
+  background-size: cover;
+  justify-content: flex-start;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  height:60vh;
+  display: flex;
+  align-items: center; 
  
     
 }
@@ -24,48 +24,107 @@ align-items: center;
   padding: 12px;
   font-size: 50px;
   margin: 20px 30px ;
-    animation: slideUp 1s ease-out forwards;
-  animation-delay: 1.5s;
+  animation: slideUp 1s ease-out forwards;
+  animation-delay: 2s;
   opacity: 0;
+   border-top: 1px solid rgba(255, 255, 255, 0.5);
+   border-left: 1px solid rgba(255, 255, 255, 0.5);
+   box-shadow:  0px 1px 2px rgba(0, 0, 0, 0.437) ;
 }
 
 @keyframes slideUp {
  0% {opacity: 0;
     transform: translateX(-90px);
   }
-  100% {opacity: 1;
-  transform: translateX(0);
-}
-}
+ 100% {opacity: 1;
+  transform: translateX(0); }
+  }
 
 .aboutSection .abou {
   margin: 50px;
   font-size: 40px;
   text-align: center;
+  color: #00278D;
 }
 
 .aboutSection:hover ,  .hoursSection:hover {
  transform: translateY(-5px); 
-  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.231); }
+ box-shadow: 0 8px 10px rgba(0, 0, 0, 0.231); }
 
-.scroll-animate {
-  opacity: 0;
-  transform: translateX(-100px);
-  transition: all 0.5s ease-in-out;
+
+
+.toothSection{
+  display: flex;
+  align-items: center;
+  position: relative ;
+  width: 100%;
+  height: 35vh;
+  margin: 10px 10px 0 0px;
+  overflow: hidden;
+  z-index: 1;
+  padding: 10px 0;
+}
+.toothImage {
+  position: relative ;
+   width: 200px;
+   height: 200px;
+   border-radius: 50%;
+   background:  rgb(77, 139, 194); 
+   border-top: 1px solid #ffffff;
+   border-left: 1px solid #ffffff;
+   transition: all 0.3s ease;
+   box-shadow:  0px 2px 5px rgba(0, 0, 0, 0.692) ;
+   z-index: 1;
+  
 }
 
-.scroll-animate.active {
-  opacity: 1;
-  transform: translateX(0);
+.Image15{
+bottom: 0px;
+max-height: 200px;
+width:auto;
+height: auto;
+animation: floatTooth 5s ease-in-out infinite;
+z-index: 2;
 }
-.hoursSection{
+
+@keyframes floatTooth  {
+   0%, 100% {
+    transform: translateY(0px);
+  }
+   50%{
+    transform: translateY(-10px)  translateX(5px)};
+  
+}
+.text{
+position: absolute;
+color: #00000070;
+font-size: 52px;
+width: 100%;
+white-space: nowrap;
+animation: textSlide 12s linear infinite;
+font-family: sans-serif;
+left: 100px;
+display: flex;
+
+}
+
+@keyframes textSlide {
+  0%{transform: translateX(0%);}
+  100%{transform:translateX(-100%) ;}
+}
+
+.text p{
+  padding: 10px;
+
+}
+.hoursSection {
   font-size: 24px;
   padding: 12px ;
   margin: 13px 0px;
   border-radius: 10px;
   transition: transform 0.2s ease, box-shadow 0.3s ease;
   height:70vh;
-  background: linear-gradient(to left, #6592c4, rgba(77, 139, 194, 0.34)); 
+  background: linear-gradient(to left, rgba(77, 139, 194, 0.52), rgba(77, 139, 194, 0.34)); 
   overflow: hidden;
 }
 .hoursSection span {
@@ -75,14 +134,15 @@ align-items: center;
 .hoursSection .h2s {
   text-align: center;
   font-size: 40px;
-  margin: -2px;}
+  margin: -2px;
+  color: #00278D;}
  
 
   
 .hoursSection span:hover {
   text-shadow:0 0 10px rgba(255, 255, 255, 0.77) ;
   transform: translateX(10px);
-    transition: transform 0.4s ease; 
+   transition: transform 0.4s ease; 
 
 
 }
@@ -91,8 +151,8 @@ align-items: center;
   list-style: none; 
   margin: 0;
   padding: 0px 0px ;
-  color: blueviolet;
-  -webkit-text-stroke:1px #4b698a95;
+  color:#00278D;
+  -webkit-text-stroke: 0.2px #2323234e;;
 
 }
 
@@ -104,40 +164,80 @@ align-items: center;
   border-bottom: 1px dashed rgba(255,255,255,0.5); }
 
 
-  .image{
-    position: relative ;
+  .Image16h {
+  position: absolute;
+  width: auto;
+  height: auto;
+  background-repeat: no-repeat;
+  background-size: contain;
+  max-height: 400px;
+  opacity: 1;
+  left: -150px;
+  top: auto;
+  background-position: right;
+  z-index: -10;
+  filter: blur(6px);
+  animation: floatHours 4s ease-in-out infinite;
+}
+@keyframes floatHours {
+  0%, 100% {
+  transform: translateY(0px);
+  }
+  50% {
+  transform: translateY(5px) translateX(-10px);   }
+ }
+
+.scroll-animate {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 0.5s ease-in-out;
+}
+
+.scroll-animate.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+  .image {
     max-height: 60vh auto;
     width: 100%;
+    position: relative ;
     overflow: hidden ;
     border-radius: 10px ;
     margin: 15px auto;
 
 
   }
-  .zoomImg{
-    width: 100%;
-    height: 100%;
+  .zoomImg {
+    width: 100% ;
+    height: 100% ;
     object-fit: cover;
     transition: transform 0.1s ease-out;
   }
 
-.ourDoctors{
+.ourDoctors {
   padding: 20px 20px;
   text-align: center;
-    font-size: 24px;
-  margin: 13px 0px;
+    font-size: 24px ;
+  margin: 13px 0px ;
 
 }
 .drTitle{
   margin:  25px;
-  color: #000000;
+  color: #00278D ;
 }
+.drPraragrapg{
+  font-size: 16px;
+  position: relative ;
+  margin: 0px 15px 25px;
+  color:  rgb(77, 139, 194) ;
 
+}
 
 .drContainer{
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) ;
   gap: 15px;
+  
 }
 
 .drCard{
@@ -147,32 +247,35 @@ align-items: center;
   transform: translateY(50px);
   transition: all 0.8s ease-out;
   opacity: 0;
-      box-shadow: 0 5px 5px rgba(0, 0, 0, 0.100);
+   border-left: 1px solid rgba(77, 139, 194, 0.402);
+   box-shadow:  0px 2px 4px rgba(0, 0, 0, 0.343) ;
+   
 
 }
 
 .drCard.active{
     transform: translateY(0);
     opacity: 1;
-
   
 }
 
 .drCard:hover{
     box-shadow: 0 8px 10px rgba(0, 0, 0, 0.231);
-    transform: translateY(-15px);
+    transform: translateY(-20px);
     background: rgba(77, 139, 194, 0.402); 
 }
 
 .drImage img {
-  border-radius: 10px;
   width: 100%;
+  border-radius: 10px;
   margin-bottom: 10px;
+   box-shadow:  0px 2px 5px rgba(0, 0, 0, 0.203) ;
+
 }
 
 
 .drNames{
-  color:#000000;
+  color:#000;
   margin-bottom: 5px;
   margin: 8px;
   
@@ -187,19 +290,19 @@ align-items: center;
  @media (max-width: 1920px){
    .aboutSection{ height:40vh; padding: 20px ;}
    .hoursSection { height: 50vh;}
-      .hoursSection .h2s {font-size: 40px; margin: 15px;}
-      .hoursSection span {font-size:  30px; word-spacing: 15px;}
-      .aboutSection .paragraph { padding:0px; font-size: 40px; margin: 10px 10px ;}
-      .aboutSection .abou { padding: 5px 5px; margin: 20px 10px; font-size: 40px;}
+    .hoursSection .h2s {font-size: 40px; margin: 15px;}
+    .hoursSection span {font-size:  30px; word-spacing: 15px }
+    .aboutSection .paragraph { padding:0px; font-size: 40px; margin: 10px 10px ; }
+     .aboutSection .abou { padding: 5px 5px; margin: 20px 10px; font-size: 40px;}
  }
 
  @media (max-width: 1440px) {
    .aboutSection{ height:55vh; padding: 20px ;}
    .hoursSection { height: 75vh;} 
-      .hoursSection .h2s {font-size: 35px; margin: 15px;}
-      .hoursSection span {font-size:  25px; margin:  0 10px 0 10px ;; }
-      .aboutSection .paragraph { padding: 18px; font-size: 35px; margin: 10px 10px ;}
-      .aboutSection .abou { padding: 5px 5px; margin: 20px 10px; font-size: 40px;}
+    .hoursSection .h2s {font-size: 35px; margin: 15px;}
+    .hoursSection span {font-size:  25px; margin:  0 10px 0 10px ;; }
+    .aboutSection .paragraph { padding: 18px; font-size: 35px; margin: 10px 10px ;}
+    .aboutSection .abou { padding: 5px 5px; margin: 20px 10px; font-size: 40px;}
 
  }
  
@@ -220,12 +323,13 @@ align-items: center;
  .aboutSection .abou { padding: 5px 5px; margin: 10px 10px; font-size: 30px;}
  .image{height:auto}
  .drContainer{grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));gap: 10px;}
-  .ourDoctors{padding: 10px; font-size: 22px;}
-  .drCard{ padding: 5px;}
-
-
+ .ourDoctors{padding: 10px; font-size: 22px;}
+ .drCard{ padding:10px;}
+ .toothSection{height: 25vh;}
+ .toothImage, .Image15{ width: 120px; height: auto; margin: 0px 0px;}
+ .text{font-size: 22px; }
+  
 }
-
 
 @media(max-width: 425px){
   .hoursSection .time li {padding: 3px;}
@@ -238,9 +342,12 @@ align-items: center;
 .image{ height: auto}
 .drContainer{grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));gap: 10px;}
   .ourDoctors{padding: 10px; font-size: 16px;}
-  .drCard{ padding: 5px;}
-
-
+  .drCard{ padding: 10px;}
+  .drPraragrapg{font-size: 14px;}
+  .Image16h{ height: 250px; left: -100px;}
+  .toothSection{height: 20vh;}
+  .toothImage, .Image15{ width: 100px; height: auto; margin: 0px 0px;}
+  .text{font-size: 18px; }
 }
 
 @media (max-width: 320px){
@@ -252,9 +359,15 @@ align-items: center;
 .aboutSection {height: 30vh; padding: 5px;}
   .aboutSection .abou { padding: 0px 0px; margin: 5px 5px; font-size: 20px;}
   .aboutSection .paragraph {  font-size:15px; margin: 0px 5px; padding: 10px ; }
-  .image { margin:5px auto;    object-fit: contain; height: auto;}
+  .image { margin:5px auto;  object-fit: contain; height: auto;}
   .drContainer{grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));gap: 10px;}
   .ourDoctors{padding: 10px; font-size: 16px;}
   .drCard{ padding: 5px;}
+  .drPraragrapg{font-size: 10px;}
+  .drTitle{font-size: 20px;}
+  .Image16h{ height: 250px; left: -100px;}
+  .toothSection{height: 20vh;}
+  .toothImage, .Image15{ width: 100px; height: auto; margin: 0px 0px;}
+  .text{font-size: 20px; }
 
  }

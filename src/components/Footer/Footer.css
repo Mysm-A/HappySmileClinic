@@ -1,24 +1,32 @@
 
 .footer {
-    font-family: sans-serif;
-   background-color:  rgba(77, 139, 194, 0.52);
-    height: auto;
-    width: 100%;
-    margin: 0;
-    border-radius: 10px 10px 0 0;}
+  font-family: sans-serif;
+  background-color:  rgba(77, 139, 194, 0.52);
+  height: auto;
+  width: 100%;
+  margin: 0;
+  border-radius: 10px 10px 0 0;
+ z-index: 10;
+  position: relative;
+  align-items: flex-start;
+  overflow: visible;
+  opacity: 1;
+  overflow: hidden;
+}
+
 
 
 .titleFooter h2 {
     text-align: center; 
     padding: 20px;
-    color: rgb(56, 56, 56); }
+    color: #00278D; }
 
 .footerSection h4{
-    font-size: 22px;
-    margin: 0px;
-    color: rgb(56, 56, 56);
-    perspective: 500px;
-    padding: 0 0 0 2px;
+  font-size: 22px;
+  margin: 0px;
+  color: rgb(56, 56, 56);
+  perspective: 500px;
+  padding: 0 0 0 2px;
 }
 
 .heroFooter {
@@ -27,31 +35,73 @@
   gap: 0px ;
   align-items: stretch ;
   animation: slideUpp 1s ease-out forwards;
-  animation-delay: 1.5s;
+  animation-delay: 2.5s;
   opacity: 0;
 }
 
 @keyframes slideUpp {
  0% {opacity: 0;
-    transform: translateY(50px);
+    transform: translateY(60px);
   }
   100% {opacity: 1;
   transform: translateY(0);
 }
 }
 .gitIcon{
-  margin: 15px 0 0 5px;
+  margin: 10px 0 0 0px;
     font-size: 30px;
+    color: rgb(56, 56, 56);
 
 }
+
+.icons a::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 6px;
+  background-color:#00288d;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.icons a:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(2px);
+}
+.icons{
+  display:flex;
+  gap: 15px;
+    align-items: flex-start;
+    padding: 15px;
+    margin: 0 0 40px 0px;
+
+}
+.icons a{
+  position: relative;
+  flex-direction: column;
+  text-decoration: none;
+  align-items: center;
+  display: inline-flex;
+    overflow: visible;
+    line-height: 1;
+
+}
+
 .gitIcon:hover{
-  color: #161616;
+  color:#00288d;
+  transform: translateY(-5px);
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .footerSection {
   border-radius: 8px ;
   padding: 15px ;
-  height: 250px;
+  height: 150px;
   display: flex ;
   flex-direction: column;
   }
@@ -75,23 +125,66 @@
   font-size: 18px;
   line-height: 1.6;
   font-weight: bold;
-  color: #000000;
+  color: #000;
   text-decoration: none;
+  
   transition: color 0.3s ease , transform  0.3s ease ;
   cursor: pointer ;
 }
 
 .footerSection  li:hover {
-  color:  rgba(52, 108, 157, 0.763) ;
+  color:  #00288d ;
   font-size: 21px;
   transform: translateX(10px);
   transition: transform 0.3s ease , color 0.3s ease , size 0.4s ease; 
 
+
 }
 
 
-.footerSection p:hover , .footerSection li a:hover {
-  color: rgba(52, 108, 157, 0.763);
+.footerSection p:hover , .footerSection li a:hover{
+  color: #00288d;
   transform: translateX(10px);
     transition: transform 0.3s ease, color 0.3s ease;
+
+}
+
+.Image16{
+position: absolute; 
+background-repeat: no-repeat;
+background-size: contain;
+background-position: right;
+ max-height: 200px;
+width: auto;
+height: auto;
+opacity: 1  ;
+right: -50px;
+z-index: -10;
+animation: float 5s ease-in-out infinite;
+bottom: 20px;
+display: inline-block;
+}
+
+.imageShdow{
+  content: "";
+  bottom: 10px;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 20px;
+  right: -50px;
+  background: radial-gradient(#00000074 ,transparent 70%);
+  z-index: -10;
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+
+@keyframes float{
+   0%, 100% {
+    transform: translateY(0px);
+  }
+    50%{
+      transform: translateY(-10px) translateX(5px)};
+  
 }

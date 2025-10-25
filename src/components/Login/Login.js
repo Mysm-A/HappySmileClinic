@@ -1,32 +1,29 @@
 import React, { useState } from "react";
 import { LuUser} from "react-icons/lu";
 import {MdLockOutline} from "react-icons/md";
-import {Link, useNavigate} from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 import "./Login.css";
-import { useDispatch } from "react-redux";
 import { login } from "../authSlice";
-// import { Navigate } from "react-router-dom";
 
 
-function Login() {
+function Login({onSwitch, onLoginSuccess}) {
   const [UserName, setName]= useState("");
   const [password, setPassword]= useState("");
     const [success, setSuccess] = useState(false);
 
       const navigate = useNavigate();
-  const dispatch = useDispatch();
 
 const handleSubmit = (e) => {
     e.preventDefault();
 
-    dispatch ( login  ( {UserName }));
     setSuccess(true);
-  setTimeout(() => {navigate("/appointment") ; } , 1500) ;
+    if( onLoginSuccess)onLoginSuccess();
+    setTimeout(() => {
+      navigate("/appointment") ; } , 150) ;
   };
 
   
   return (
-    <div className="backLogin">
     <div className="wrapper" id="loginSection">
         <h2>SIGN IN</h2>
       <form onSubmit={handleSubmit}>
@@ -46,12 +43,13 @@ const handleSubmit = (e) => {
 
        <div className="register">
   <p>
-    Don’t have an account? <Link to="/signup">Register</Link>
+    Don’t have an account?{""}
+    <span onClick={onSwitch} >Register</span>
   </p>
 </div>
 
       </form>
-    </div></div>
+    </div>
   );
 }
 
