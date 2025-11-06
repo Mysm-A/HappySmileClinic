@@ -5,12 +5,10 @@ import Navbar from "../Header/Navbar";
 import Footer from "../Footer/footer";
 import Login from '../login/Login';
 import SignUp from '../signup/Signup';
-import Protected from "./Protected"; 
 import './Appointment.css';
 import "./HeroButton";
 import "./Protected";
 import "../../Web.css";
-import Image15 from "../../Images/15.png";
 import { SiVerdaccio } from "react-icons/si";
 function Appointment() {
 const [isLogin, setIsLogin]= useState(true);
@@ -22,6 +20,8 @@ const handleLoginSuccess=()=> {setIsLoggedIn(true);};
   const [selectedTime, setSelectedTime]= useState('');
   const [ success, setSuccess]= useState('');
   const [availableSpaces, setAvailableSpaces]= useState(0);
+  const [availableTime, setAvailableTime]= useState([]);
+  const [alert , setAlert]= useState("");
   
   const appointments = [
     { doctor: "Dr.Omar Willy - (Orthodontist)",times:   ["10:00 AM" , "11:00 AM" , "12:00 PM" , "13:00 PM" ,"14:00 PM" ,"16:00 PM" ,"18:00 PM"] },
@@ -41,13 +41,28 @@ const handleLoginSuccess=()=> {setIsLoggedIn(true);};
         navigate("/"); }, 3000);
     } 
     else {
-      alert("please select doctor, date, time");
+      setAlert("please select doctor, date and time");
     }
   };
   const handleDateChange=(e)=> {
   const date= e.target.value;
+  const day= new Date(date).getDay();
+  setAlert ("");
+  if (day=== 0){
+    setAlert('Appointment are Not available on sundays');
+    e.target.value= "";
+    setSelectedDate("");
+    setAvailableSpaces(0) ;
+    setAvailableTime([]) ;
+    return;
+  }
   setSelectedDate(date);
-  setAvailableSpaces(Math.floor(Math.random() *10)  +1);  
+  const spaces= Math.floor(Math.random() *7)  +1;
+  setAvailableSpaces(spaces) ;
+  if(selectedDoctor) {
+    const doctorTime=appointments.find((d)=> d.doctor === selectedDoctor)?.times ||[];
+    setAvailableTime(doctorTime.slice (0, spaces));
+  }
   };
 
   return (
@@ -86,24 +101,31 @@ const handleLoginSuccess=()=> {setIsLoggedIn(true);};
             onChange={handleDateChange} min={new Date().toISOString().split('T' ) [ 0 ] } 
             />
             </label>
-             {selectedDate &&( <p className="availableSpaces"> {availableSpaces} Available Appointments for this date</p>)}
-              
-              <label>TIME:* <select value={selectedTime} onChange={(e) => setSelectedTime (e.target.value)} >
-               <option value={ ''} >Select time </option>
+             {selectedDate &&(
+              <> <p className="availableSpaces"> {availableSpaces} Available Appointments for this date</p>
+            <div className="timeClander">
+              {availableTime.map((time,index)=> (
+                <div className="timeSection" key={index}>
+                 
+                 <p className="textTime">{time}</p>
+                                 <p className="availableText">1 Space Available</p>
 
-                 {selectedDoctor && appointments.find(a => a.doctor === selectedDoctor).times.map((time, idx) => (
-                 <option key={ idx } value={time}> {time}
-
-               </option>
-                 ))}
-                 </select><p className="required">* Required fields</p>
-                 </label>
+                <button className={` bookTime ${selectedTime ===time ? "active":"" }`}
+                onClick={ ()=> setSelectedTime(selectedTime ===time ? "": time)}>
+                  Book Appointment  
+              </button>
+                </div>
+              ))} </div>
+            </>
+          )}
+                 <p className="required">* Required fields</p>
                  <div className="purpule">
-                 <button onClick={handleBook}>  ONLINE DENTAL APPOINTMENT</button>
-                 <button onClick={ () => navigate('/') }>LOGOUT</button></div>
+                 <button className="bookBtn" onClick={handleBook}>  ONLINE DENTAL APPOINTMENT</button>
+                 <button  className="bookBtn" onClick={ () => navigate('/') }>LOGOUT</button>
+                 </div>
                  </div>
                  
-                 
+              {alert && <p className="alert">{alert}</p>}  
              {success && <p className="success"> Appointment booked successfully</p>}
 
             </div>
@@ -116,5 +138,3 @@ const handleLoginSuccess=()=> {setIsLoggedIn(true);};
 
 
 export default Appointment;
-
-

@@ -16,7 +16,7 @@ function HeroButton()  {
   };
 
   return (
-    <button className="heroBtn" onClick={handleClick}>Get your smile </button>
+    <button className="heroBtn" onClick={handleClick}>Make an Appointment </button>
 
   );}
 

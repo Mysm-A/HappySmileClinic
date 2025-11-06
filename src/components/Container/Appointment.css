@@ -43,11 +43,14 @@
   color: #00278D;
   font-weight: bolder;
   font-size: 15px;
+  margin: 6px;
+  text-align: center ;
+
   
 }
 .appointmentSection {
   display: flex;
-  width: 100vw;
+  width: 100%;
   box-sizing: border-box ;
   border-radius: 12px ;
   box-shadow:  0px 8px 25px rgba(0, 0, 0, 0.2) ;
@@ -104,7 +107,7 @@
   max-width: 100%;
   margin-top: 8px;
   box-sizing: border-box;
-  font-size: 15px;
+  font-size: 17px;
   outline: none;
   border-radius: 8px;
   padding: 12px;
@@ -149,7 +152,7 @@
   box-shadow: 0 0 8px  rgba(77, 139, 194, 0.796);
 }
 
-.purpule button {
+.purpule .bookBtn {
   margin-top: 30px;
   padding: 14px;
   font-weight: bold;
@@ -233,9 +236,9 @@
 
 
 .success {
-   position: fixed;
-  top: 20px;
-  right: 20px;
+  position: fixed;
+  top: 50px;
+  right: 10px;
   background: #28a745;
   color: white;
   padding: 12px 20px;
@@ -244,8 +247,79 @@
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.363);
   animation: slideInOut 3s forwards;
   z-index: 2;
+
+}
+.alert{
+  position: fixed;
+  top: 50px;
+  right: 10px;
+  background: #da200fdf;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.363);
+  animation: slideInOut 3s forwards;
+  z-index: 2;
+}
+.timeClander{
+  display: grid;
+  margin: 20px 0;
+
 }
 
+.timeSection{
+  margin: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background:transparent;
+  backdrop-filter: blur(5px) ;
+  box-shadow: -2px -2px 15px #ffffff4f; 
+  border: 1px solid #b4b5b653;
+  border-radius: 10px;
+  padding: 0 12px ;
+
+
+
+}
+.textTime{
+  font-size: 22px;
+  color: #00278D;
+  margin: 5px 0;
+
+}
+
+.bookTime{
+  color: azure;
+  padding: 10px 20px;
+  font-weight: 700;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  background: linear-gradient(145deg, #3f6c9f, rgb(80, 156, 222));
+  border: none;
+  box-shadow:  0px 2px 4px rgba(0, 0, 0, 0.378) ;
+  margin: 10px;
+  
+}
+.bookTime.active {
+  background:transparent;
+  backdrop-filter: blur(5px) ;
+  box-shadow: -2px -2px 15px #ffffff4f; 
+  border: 1px solid #b4b5b653;
+  color: #00278D;
+  text-shadow:0 0 5px #31323245 ;
+  background: none;
+
+
+}
+
+.availableText{
+  font-size: 18px;
+  color: red;
+  margin:0 8px;
+}
 
 
 @media (max-width: 1024px), (max-width: 1440px),(max-width: 1920px) {
@@ -257,7 +331,12 @@
   .getSmile {height: 75vh;}
 
 
-
+@media (max-width: 1024px) {
+  .bookTime{padding:8px; font-size: 15px; margin: 10px;}
+  .availableText{font-size: 14px;}
+  .textTime{font-size: 16px;}
+  .purpule{padding: 50px 30px;}
+}
 @media (max-width: 768px) {
 
   .appointmentSection { flex-direction: column;}
@@ -268,7 +347,13 @@
   .appointmentContent .heroBtn {font-size: 14px;}
   .appointmentContent {padding:5px;}
   .getSmile{max-height: 50vh;}
-  .heroImage { height: 500px;  padding: 0px;}}
+  .heroImage { height: 500px;  padding: 0px;}
+  .timeSection{display: flex; flex-direction: column; align-items: center; }
+  .availableText{font-size: 16px;}
+  .bookTime{padding: 10px; margin: 6px; font-size: 16px; }
+  .textTime{font-size: 22px;}
+
+}
   
 
   @media (max-width: 425px) {
@@ -281,6 +366,7 @@
   .appointmentContent .heroBtn { font-size: 10px; padding: 5px 10px;}
    .heroImage { height: 80%; position: relative; opacity: 1; z-index: 0; width: 100%; }
   .getSmile {flex-direction: row; height: 32vh; position: relative; justify-content: flex-start;}
+  .timeSection{display: flex; flex-direction: column; align-items: center; }
 }
 
 
@@ -293,4 +379,11 @@
   .appointmentContent .heroBtn { font-size: 8px; padding: 5px 8px; }
   .heroImage { height: 25vh;}
   .getSmile { flex-direction: row; height:35vh;  }
-  .purpule { margin-top: 0px;}}
+  .purpule { margin-top: 0px;}
+  .purpule .bookBtn{  padding: 12px; font-size: 14px;}
+  .timeSection{display: flex; flex-direction: column; align-items: center; }
+  .availableText{font-size: 12px;}
+  .bookTime{padding: 6px; margin: 6px; }
+  .textTime{font-size: 20px;}
+}
+

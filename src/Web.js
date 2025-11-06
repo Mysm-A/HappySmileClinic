@@ -97,7 +97,7 @@ function Web() {
         </p>
        </div>
 
-        <div className='image' >
+        <div className='image scroll-animate' >
           <img className='zoomImg' src={clinicImg} alt='clinic'/>
         </div>
 
@@ -119,8 +119,8 @@ function Web() {
           <div className='toothImage'>
         <img src={Image15} alt='16' className='Image15' />
         </div>
-        <div className='text'><p>Your Smile Is My Mission |Your Smile Is My Mission | Your Smile Is My Mission
-           | Your Smile Is My Mission | Your Smile Is My Mission | </p></div>
+        <div className='text'><p>Your Smile Is My Mission |Your Smile Is My Mission | Your Smile Is My Mission 
+           | Your Smile Is My Mission | Your Smile Is My Mission |Your Smile Is My Mission |Your Smile Is My Mission |Your Smile Is My Mission | </p></div>
         </div>
 
         
